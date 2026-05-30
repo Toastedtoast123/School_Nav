@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self'; script-src 'self'; frame-ancestors 'none';">
+    <title>School Navigation</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo"><img id="logo" src="images/img3.png" alt="error"></a>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="hamburger">☰</label>
+                <ul>
+                    <li><label for="menu-toggle" class="close-btn">✕</label></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="room/room1.html">Rooms</a></li>
+                    <li><a href="#">Windows</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header> 
+    <section class="hero">
+        <div class="hero-text">
+            <h1>
+                <span class="red">Design And Development</span><br>
+                <span class="gradient">Of A Campus Navigation</span><br>
+                <span class="red">System </span>
+            </h1>
+            <div class="features">
+                <h3>KEY FEATURES</h3>
+                <ul>
+                    <li>📍 Real-time Indoor Mapping</li>
+                    <li>🏫 Classroom & Faculty Search</li>
+                    <li>⚡ Personalized Route Planning</li>
+                </ul>
+            </div>
+        </div>
+        <div class="map">
+            <img class="map-illustration" src="images/img1.png" alt="Campus Map">
+        </div>
+    </section>
+
+    <!-- Onboarding tutorial popup (first-time only) -->
+    <div id="onboarding-overlay" class="onboarding-overlay" aria-hidden="true">
+        <div id="onboarding-modal" class="onboarding-modal" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
+            <div class="onboarding-header">
+                <div class="onboarding-brand">
+                        <div class="onboarding-icon" aria-hidden="true">&#10024;</div>
+
+                    <div>
+                        <h2 id="onboarding-title" class="onboarding-title">Welcome to ICCT Navigation</h2>
+                        <p class="onboarding-subtitle">A quick, beginner-friendly guide to get you moving.</p>
+                    </div>
+                </div>
+                <button id="onboarding-close" class="onboarding-icon-btn" type="button" aria-label="Close tutorial">✕</button>
+            </div>
+
+            <div class="onboarding-progress" aria-label="Tutorial progress">
+                <div class="onboarding-progress-bar" aria-hidden="true"></div>
+                <div id="onboarding-step-label" class="onboarding-step-label">Step 1 of 4</div>
+            </div>
+
+            <div class="onboarding-body">
+                <!-- Step panels are swapped via JS -->
+                <div class="onboarding-step is-active" data-step="0">
+                    <div class="onboarding-step-top">
+                        <div class="onboarding-step-badge">
+                            <span class="onboarding-step-badge-icon" aria-hidden="true">1</span>
+                            <span class="onboarding-step-badge-text">Getting Started</span>
+                        </div>
+                        <div class="onboarding-step-tip"><span aria-hidden="true">🧭</span> Look for the menu to navigate.</div>
+                    </div>
+                    <p class="onboarding-paragraph">This site helps you find places around campus and plan routes. Start by using the navigation bar to open Rooms.</p>
+
+                    <ul class="onboarding-list">
+                        <li>
+                            <span class="onboarding-li-icon" aria-hidden="true">📍</span>
+                            <span><strong>Rooms</strong> → explore each room page.</span>
+                        </li>
+                        <li>
+                            <span class="onboarding-li-icon" aria-hidden="true">🧠</span>
+                            <span>Follow the steps to learn how to go from <strong>Start</strong> to <strong>Destination</strong>.</span>
+                        </li>
+                        <li>
+                            <span class="onboarding-li-icon" aria-hidden="true">🖱️</span>
+                            <span>Everything is responsive—works on mobile too.</span>
+                        </li>
+                    </ul>
+
+                    <div class="onboarding-highlight-row">
+                        <div class="onboarding-highlight">
+                            <span class="onboarding-highlight-icon" aria-hidden="true">☰</span>
+                            <span class="onboarding-highlight-text">Top Navigation</span>
+                        </div>
+                        <div class="onboarding-highlight-shadow"></div>
+                    </div>
+                </div>
+
+                <div class="onboarding-step" data-step="1">
+                    <div class="onboarding-step-top">
+                        <div class="onboarding-step-badge">
+                            <span class="onboarding-step-badge-icon" aria-hidden="true">2</span>
+                            <span class="onboarding-step-badge-text">Choose Places</span>
+                        </div>
+                        <div class="onboarding-step-tip"><span aria-hidden="true">🎯</span> Pick your start & end.</div>
+                    </div>
+                    <p class="onboarding-paragraph">Open a room and use the route controls to set your <strong>From</strong> and <strong>To</strong> inputs.</p>
+
+                    <div class="onboarding-interface">
+                        <div class="onboarding-interface-item">
+                            <span class="onboarding-interface-icon" aria-hidden="true">A</span>
+                            <div>
+                                <div class="onboarding-interface-title">From</div>
+                                <div class="onboarding-interface-desc">Your starting location on campus.</div>
+                            </div>
+                        </div>
+                        <div class="onboarding-interface-item">
+                            <span class="onboarding-interface-icon" aria-hidden="true">B</span>
+                            <div>
+                                <div class="onboarding-interface-title">To</div>
+                                <div class="onboarding-interface-desc">Your destination room/area.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="onboarding-navigation-hint">
+                        <span class="onboarding-hint-icon" aria-hidden="true">➡️</span>
+                        <div>
+                            <div class="onboarding-hint-title">Tip</div>
+                            <div class="onboarding-hint-text">Type carefully—use suggestions if available. Then confirm and view the route.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="onboarding-step" data-step="2">
+                    <div class="onboarding-step-top">
+                        <div class="onboarding-step-badge">
+                            <span class="onboarding-step-badge-icon" aria-hidden="true">3</span>
+                            <span class="onboarding-step-badge-text">View the Route</span>
+                        </div>
+                        <div class="onboarding-step-tip"><span aria-hidden="true">🧱</span> Follow the path on the map.</div>
+                    </div>
+                    <p class="onboarding-paragraph">After you set both locations, the route appears on the campus viewer. Take a moment to scan the highlighted path.</p>
+
+                    <div class="onboarding-map-mock">
+                        <div class="onboarding-map-mock-header">
+                            <span aria-hidden="true">🗺️</span> Map Viewer</div>
+                        <div class="onboarding-map-mock-body">
+                            <div class="onboarding-map-node onboarding-node-start" title="Start"></div>
+                            <div class="onboarding-map-node onboarding-node-dest" title="Destination"></div>
+                            <div class="onboarding-map-path" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                    <div class="onboarding-navigation-hint">
+                        <span class="onboarding-hint-icon" aria-hidden="true">🪄</span>
+                        <div>
+                            <div class="onboarding-hint-title">Navigation</div>
+                            <div class="onboarding-hint-text">Zoom/pan if supported. If the route looks off, revisit your From/To selection.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="onboarding-step" data-step="3">
+                    <div class="onboarding-step-top">
+                        <div class="onboarding-step-badge">
+                            <span class="onboarding-step-badge-icon" aria-hidden="true">4</span>
+                            <span class="onboarding-step-badge-text">Move Confidently</span>
+                        </div>
+                        <div class="onboarding-step-tip"><span aria-hidden="true">✅</span> Ready to go!</div>
+                    </div>
+                    <p class="onboarding-paragraph">You’re set. Now you can explore different rooms and plan routes anytime.</p>
+
+                    <ul class="onboarding-list">
+                        <li>
+                            <span class="onboarding-li-icon" aria-hidden="true">🔁</span>
+                            <span>Re-run a route by changing inputs.</span>
+                        </li>
+                        <li>
+                            <span class="onboarding-li-icon" aria-hidden="true">🏢</span>
+                            <span>Use <strong>Rooms</strong> to jump to another location.</span>
+                        </li>
+                        <li>
+                            <span class="onboarding-li-icon" aria-hidden="true">📱</span>
+                            <span>The experience adapts to your device for a smooth walkthrough.</span>
+                        </li>
+                    </ul>
+
+                    <div class="onboarding-final-cta">
+                        <div class="onboarding-final-cta-title">One last thing</div>
+                        <div class="onboarding-final-cta-text">When you’re ready, hit <strong>Get Started</strong> to close the tutorial.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="onboarding-footer">
+                <button id="onboarding-skip" class="btn btn-secondary" type="button">Skip Tutorial</button>
+                <div class="onboarding-footer-right">
+                    <button id="onboarding-prev" class="btn btn-tertiary" type="button" disabled>Back</button>
+                    <button id="onboarding-next" class="btn btn-primary" type="button">Next</button>
+                    <a id="onboarding-get-started" class="btn btn-primary" href="#" role="button" style="display:none;">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
