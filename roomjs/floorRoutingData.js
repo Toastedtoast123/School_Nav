@@ -470,7 +470,7 @@
     'Hallway2a': ['Hallway2',],
     'Hallway5':  ['Hallway5a', 'Hallway8'],
     'Hallway5a': ['Hallway5', 'Hallway6', 'Hallway7a', 'B2.up', 'B2.down'],
-    'Hallway6':  ['Hallway5a', 'Hallway7a', 'Hallway8', 'B2.up', 'B2.down'],
+    'Hallway6':  ['Hallway5a', 'Hallway7a', 'Hallway8', 'B2.up', 'B2.down', 'Gymnasium'],
     'Hallway7':  ['Hallway7a', 'Hallway8', 'CR.G1'],
     'Hallway7a': ['Hallway7', 'Hallway6', 'Hallway5a', 'B2.up', 'B2.down'],
     'Hallway8':  ['Hallway7', 'Hallway6', 'Hallway5'],
@@ -480,7 +480,9 @@
     'B4.down':   ['Hallway1'],
     'CR.G1':     ['Hallway7'],
     'CR.G2':     ['Hallway1a'],
-    'Elevator':  ['Hallway2', 'Hallway1', 'Hallway3', 'Hallway3a', 'Hallway3b'],
+    'Elevator':  ['Hallway2', 'Hallway1', 'Theater'],
+    'Theater':   ['Elevator'],
+    'Gymnasium': ['Hallway6'],
   };
 
   const floor6ConnectionPoints = {
@@ -501,6 +503,8 @@
     'Elevator':  { x: -100, y: 0, z:  69 },
     'CR.G1':     { x:  190, y: 0, z:  85 },
     'CR.G2':     { x: -190, y: 0, z:  85 },
+    'Theater':   { x: -100, y: 0, z:  55 },
+    'Gymnasium': { x:  100, y: 0, z:   0 },
   };
 
   function prefixFloorData(floorNum, rawGraph, rawCp) {
